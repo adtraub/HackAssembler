@@ -79,6 +79,5 @@ function intToBinary(intToConvert){
 
 function padString(stringToPad, totalLength){ 
   return (stringToPad).length >= totalLength ? 
-  stringToPad : 
-  padString("0" + stringToPad, totalLength);
+  stringToPad : padString("0" + stringToPad, totalLength);
 }
