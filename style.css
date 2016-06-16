@@ -4,7 +4,7 @@
 }
 
 #top-header {
-    border: 1px solid blue;
+    border: 3px solid blue;
     padding: 40px;
     font-size: 30px;
     color: white;
@@ -40,7 +40,7 @@ body{
     border-radius: 5px;
     box-shadow: 1px 1px 30px #333;
     transition: 200ms all ease;
-    font-size: 15px;
+    font-size: 16px;
     font-family: Tahoma;
     text-shadow: blue 1px 2px 7px;
 }
