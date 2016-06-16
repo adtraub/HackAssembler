@@ -1,4 +1,4 @@
-var symbolTable = {
+var masterTable = {
      comp : {
        "0"  :"101010"
       ,"1"  :"111111"
@@ -63,13 +63,19 @@ var symbolTable = {
       ,"JLE" :"110"
       ,"JMP" :"111"
     }
-  ,custom:{}
+    ,symbol:{
+       "SP"  : padString(intToBinary(0),16)
+      ,"LCL" : padString(intToBinary(1),16)
+      ,"ARG" : padString(intToBinary(2),16)
+      ,"THIS": padString(intToBinary(3),16)
+      ,"THAT": padString(intToBinary(4),16)
+  }
 }
 
 /**
- * Given a base ten integer, 
+ * Given a base ten integer,
  * returns its binary equivalent
- * 
+ *
  * @param  {int} intToConvert base ten integer
  * @return {String}  String representation of the input's binary value
  */
@@ -77,8 +83,8 @@ function intToBinary(intToConvert){
   return intToConvert.toString(2);
 }
 
-function padString(stringToPad, totalLength){ 
-  return (stringToPad).length >= totalLength ? 
-  stringToPad : 
+function padString(stringToPad, totalLength){
+  return (stringToPad).length >= totalLength ?
+  stringToPad :
   padString("0" + stringToPad, totalLength);
 }
