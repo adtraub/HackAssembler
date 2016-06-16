@@ -1,7 +1,7 @@
-//Assert symbolTable and subtables are defined
-QUnit.test("SymbolTables Exists", function(assert){
-  assert.ok(Boolean(symbolTable));
-  assert.ok(Boolean(symbolTable.comp));
+//Assert masterTable and subtables are defined
+QUnit.test("masterTables Exists", function(assert){
+  assert.ok(Boolean(masterTable));
+  assert.ok(Boolean(masterTable.comp));
 });
 
 
