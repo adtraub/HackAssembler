@@ -1,12 +1,40 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 		0px;
+    padding: 		0px;
 }
 
 #top-header{
-	
+	border: 		1px solid blue;
+	padding: 		40px;
+	font-size: 		30px;
+	color: 			white;
+	text-shadow:  	3px 6px black;
+	background-image: url("binary.jpg");
+}	
 
+body{
+	font-family:  	Helvetica, Arial, sans-serif;
+	background:  	#FFFFFF;
+	text-align:  	center;
+	padding:  		50px auto;
 }
 
+.button{
+	display: inline-block;
+	text-decoration: none;
+	color: #FFF;
+	font-weight: bold;
+	background-color: #538FBE;
+	padding: 20px 50px;
+	font-size: 20px;
+	border:1px solid navy;
+	
+ 
+    
+}
+
+.button:hover{
+
+}
 
 
