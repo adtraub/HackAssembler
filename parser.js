@@ -65,3 +65,18 @@ var symbolTable = {
     }
   ,custom:{}
 }
+
+/**
+ * Given a base ten integer, 
+ * returns its binary equivalent
+ * 
+ * @param  {int} intToConvert base ten integer
+ * @return {String}  String representation of the input's binary value
+ */
+function intToBinary(intToConvert){
+  return intToConvert.toString(2);
+}
+
+function padString(stringToPad, totalLength){
+  //YOUR CODE HERE
+}
