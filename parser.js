@@ -64,11 +64,11 @@ var masterTable = {
       ,"JMP" :"111"
     }
     ,symbol:{
-       "SP"  : padString(intToBinary(0),16)
-      ,"LCL" : padString(intToBinary(1),16)
-      ,"ARG" : padString(intToBinary(2),16)
-      ,"THIS": padString(intToBinary(3),16)
-      ,"THAT": padString(intToBinary(4),16)
+       "SP"  : padString(intToBinary(0))
+      ,"LCL" : padString(intToBinary(1))
+      ,"ARG" : padString(intToBinary(2))
+      ,"THIS": padString(intToBinary(3))
+      ,"THAT": padString(intToBinary(4))
   }
 }
 
@@ -83,6 +83,6 @@ function intToBinary(intToConvert){
   return intToConvert.toString(2);
 }
 
-function padString(stringToPad, totalLength){
-  return (stringToPad).length >= totalLength ? stringToPad : padString("0" + stringToPad, totalLength);
+function padString(stringToPad, totalLength = 16, char = "0"){
+  return (stringToPad).length >= totalLength ? stringToPad : padString(char + stringToPad, totalLength);
 }
