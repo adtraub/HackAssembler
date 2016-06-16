@@ -83,14 +83,8 @@ function intToBinary(intToConvert){
   return intToConvert.toString(2);
 }
 
-<<<<<<< HEAD
-function padString(stringToPad, totalLength){ 
-  return (stringToPad).length >= totalLength ? 
-  stringToPad : padString("0" + stringToPad, totalLength);
-=======
 function padString(stringToPad, totalLength){
   return (stringToPad).length >= totalLength ?
   stringToPad :
   padString("0" + stringToPad, totalLength);
->>>>>>> origin/master
 }

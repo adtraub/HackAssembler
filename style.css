@@ -8,17 +8,45 @@
     padding: 40px;
     font-size: 30px;
     color: white;
-    text-shadow:black 1px 3px 0, black 1px 10px 5px;
+    text-shadow: black 1px 3px 0, black 1px 10px 5px;
     background-image: url("binary.jpg");
-}
-
-body {
+    text-align: center;
     font-family: Helvetica, Arial, sans-serif;
-    background: #FFFFFF;
+}
+body{
+	background-color: azure;
+}
+#main-section {
+    font-family: Tahoma;
+    background: azure;
     text-align: center;
     padding: 50px auto;
     -webkit-perspective: 400;
     -webkit-transform: rotateX(20deg);
+    margin-top: 50px;
+}
+
+#textboxarea {
+    margin: 55px;
+}
+
+#textbox1,
+#textbox2 {
+    height: 350px;
+    width: 300px;
+    padding: 20px;
+    border: 2px solid black;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 30px #333;
+    transition: 200ms all ease;
+    font-size: 15px;
+    font-family: Tahoma;
+    text-shadow: blue 1px 2px 7px;
+}
+
+#textbox2 {
+    margin-left: 90px;
 }
 
 .button {
@@ -27,7 +55,7 @@ body {
     color: #fff;
     font-weight: bold;
     background-color: #538fbe;
-    padding: 20px 50px;
+    padding: 20px 40px;
     font-size: 20px;
     border: 1px solid #2d6898;
     background-image: linear-gradient(bottom, rgb(73, 132, 180) 0%, rgb(97, 155, 203) 100%);
