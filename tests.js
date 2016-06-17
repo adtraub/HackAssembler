@@ -40,4 +40,6 @@ QUnit.test("Test String Padding", function(assert){
   assert.ok(padString(intToBinary(7),4)     == "0111",'padString(intToBinary(7),4)     == "0111"');
   assert.ok(padString(intToBinary(8),10)    == "0000001000",'padString(intToBinary(8),10)    == "0000001000"');
   assert.ok(padString("hey",5)              == "00hey",'padString("hey",5)              == "00hey"');
+  assert.ok(padString("hey",5,"1")              == "11hey",'padString("hey",5,"1")              == "11hey"');
+  assert.ok(padString("hey")              == "0000000000000hey",'padString("hey",5)              == "0000000000000hey"');
 });
