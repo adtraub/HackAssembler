@@ -43,3 +43,10 @@ QUnit.test("Test String Padding", function(assert){
   assert.ok(padString("hey",5,"1")              == "11hey",'padString("hey",5,"1")              == "11hey"');
   assert.ok(padString("hey")              == "0000000000000hey",'padString("hey",5)              == "0000000000000hey"');
 });
+
+//String to Array test cases
+Qunit.test("Test String to Array", function(assert)){
+  assert.ok(stringToArray("Hello world"));
+  assert.ok(stringToArray("This is a test"));
+  assert.ok(stringToArray("Hello Adam"));
+});

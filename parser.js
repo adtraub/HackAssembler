@@ -86,3 +86,7 @@ function intToBinary(intToConvert){
 function padString(stringToPad, totalLength="16", charToPad="0"){
   return (stringToPad).length >= totalLength ? stringToPad : padString(charToPad + stringToPad, totalLength, charToPad);
 }
+
+function stringToArray(splitString) {
+    return splitString.split(" ");
+}
