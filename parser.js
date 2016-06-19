@@ -88,5 +88,9 @@ function padString(stringToPad, totalLength="16", charToPad="0"){
 }
 
 function stringToArray(splitString) {
-    return splitString.split(" ");
+    return splitString.split("\n");
 }
+
+arr.filter(function(e){ 
+  return e === 0 || e 
+});

@@ -45,8 +45,24 @@ QUnit.test("Test String Padding", function(assert){
 });
 
 //String to Array test cases
-Qunit.test("Test String to Array", function(assert)){
-  assert.ok(stringToArray("Hello world"));
-  assert.ok(stringToArray("This is a test"));
-  assert.ok(stringToArray("Hello Adam"));
+QUnit.test("Test String to Array", function(assert){
+  //assert.ok(stringToArray("Helloworld\nThis is a test") ==["Helloworld","This is a test"]);
+  //assert.ok(stringToArray("This is a test\nHello Adam") ==["This is a test","Hello Adam"]);
+  assert.ok( compareArrays(stringToArray("This is a test\nHello Adam"), ["This is a test","Hello Adam"]));
+  assert.ok( compareArrays(stringToArray("Helloworld\nThis is a test"), ["Helloworld","This is a test"]));
+  assert.ok( compareArrays(stringToArray("Helloworld\n\nThis is a test"), ["Helloworld","This is a test"]),"assert blank lines are discarded");
 });
+
+function compareArrays(a, b) {
+    var res = true;
+    if (a.length != b.length){ 
+      res = false;
+    } else {
+      for(var i=0; (i<a.length) && res; i++) {
+          if (a[i] !== b[i]) {
+            res = false;
+          }
+      }
+    }
+    return res;
+};
