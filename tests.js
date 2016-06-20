@@ -10,59 +10,45 @@ QUnit.test("MasterTable Exists", function(assert){
 
 //Binary converter test cases
 QUnit.test("Test Binary Converter", function(assert){
-  assert.ok(intToBinary(1)    == "1",'intToBinary(1)    == "1"');
-  assert.ok(intToBinary(2)    == "10",'intToBinary(2)    == "10"');
-  assert.ok(intToBinary(3)    == "11",'intToBinary(3)    == "11"');
-  assert.ok(intToBinary(4)    == "100",'intToBinary(4)    == "100"');
-  assert.ok(intToBinary(5)    == "101",'intToBinary(5)    == "101"');
-  assert.ok(intToBinary(6)    == "110",'intToBinary(6)    == "110"');
-  assert.ok(intToBinary(7)    == "111",'intToBinary(7)    == "111"');
-  assert.ok(intToBinary(8)    == "1000",'intToBinary(8)    == "1000"');
-  assert.ok(intToBinary(9)    == "1001",'intToBinary(9)    == "1001"');
-  assert.ok(intToBinary(10)   == "1010",'intToBinary(10)   == "1010"');
-  assert.ok(intToBinary(16)   == "10000",'intToBinary(16)   == "10000"');
-  assert.ok(intToBinary(32)   == "100000",'intToBinary(32)   == "100000"');
-  assert.ok(intToBinary(64)   == "1000000",'intToBinary(64)   == "1000000"');
-  assert.ok(intToBinary(128)  == "10000000",'intToBinary(128)  == "10000000"');
-  assert.ok(intToBinary(256)  == "100000000",'intToBinary(256)  == "100000000"');
-  assert.ok(intToBinary(512)  == "1000000000",'intToBinary(512)  == "1000000000"');
-  assert.ok(intToBinary(1024) == "10000000000",'intToBinary(1024) == "10000000000"');
+  assert.equal(intToBinary(1), "1");
+  assert.equal(intToBinary(2), "10");
+  assert.equal(intToBinary(3), "11");
+  assert.equal(intToBinary(4), "100");
+  assert.equal(intToBinary(5), "101");
+  assert.equal(intToBinary(6), "110");
+  assert.equal(intToBinary(7), "111");
+  assert.equal(intToBinary(8), "1000");
+  assert.equal(intToBinary(9), "1001");
+  assert.equal(intToBinary(10), "1010");
+  assert.equal(intToBinary(16), "10000");
+  assert.equal(intToBinary(32), "100000");
+  assert.equal(intToBinary(64), "1000000");
+  assert.equal(intToBinary(128), "10000000");
+  assert.equal(intToBinary(256), "100000000");
+  assert.equal(intToBinary(512), "1000000000");
+  assert.equal(intToBinary(1024), "10000000000");
 });
 
 //String padding test cases
 QUnit.test("Test String Padding", function(assert){
-  assert.ok(padString(intToBinary(1),10)    == "0000000001",'padString(intToBinary(1),10)    == "0000000001"');
-  assert.ok(padString(intToBinary(2),8)     == "00000010",'padString(intToBinary(2),8)     == "00000010"');
-  assert.ok(padString(intToBinary(3),2)     == "11",'padString(intToBinary(3),2)     == "11"');
-  assert.ok(padString(intToBinary(4),4)     == "0100",'padString(intToBinary(4),4)     == "0100"');
-  assert.ok(padString(intToBinary(5),20)    == "00000000000000000101",'padString(intToBinary(5),20)    == "00000000000000000101"');
-  assert.ok(padString(intToBinary(6),0)     == "110",'padString(intToBinary(6),0)     == "110"');
-  assert.ok(padString(intToBinary(7),4)     == "0111",'padString(intToBinary(7),4)     == "0111"');
-  assert.ok(padString(intToBinary(8),10)    == "0000001000",'padString(intToBinary(8),10)    == "0000001000"');
-  assert.ok(padString("hey",5)              == "00hey",'padString("hey",5)              == "00hey"');
-  assert.ok(padString("hey",5,"1")              == "11hey",'padString("hey",5,"1")              == "11hey"');
-  assert.ok(padString("hey")              == "0000000000000hey",'padString("hey",5)              == "0000000000000hey"');
+  assert.equal(padString(intToBinary(1),10), "0000000001");
+  assert.equal(padString(intToBinary(2),8),  "00000010");
+  assert.equal(padString(intToBinary(3),2),  "11");
+  assert.equal(padString(intToBinary(4),4),  "0100");
+  assert.equal(padString(intToBinary(5),20), "00000000000000000101");
+  assert.equal(padString(intToBinary(6),0),  "110");
+  assert.equal(padString(intToBinary(7),4),  "0111");
+  assert.equal(padString(intToBinary(8),10), "0000001000");
+  assert.equal(padString("hey",5), "00hey");
+  assert.equal(padString("hey",5,"1"), "11hey");
+  assert.equal(padString("hey"), "0000000000000hey",'Check default parameters');
 });
 
 //String to Array test cases
 QUnit.test("Test String to Array", function(assert){
   //assert.ok(stringToArray("Helloworld\nThis is a test") ==["Helloworld","This is a test"]);
   //assert.ok(stringToArray("This is a test\nHello Adam") ==["This is a test","Hello Adam"]);
-  assert.ok( compareArrays(stringToArray("This is a test\nHello Adam"), ["This is a test","Hello Adam"]));
-  assert.ok( compareArrays(stringToArray("Helloworld\nThis is a test"), ["Helloworld","This is a test"]));
-  assert.ok( compareArrays(stringToArray("Helloworld\n\nThis is a test"), ["Helloworld","This is a test"]),"assert blank lines are discarded");
+  assert.deepEqual(stringToArray("This is a test\nHello Adam"), ["This is a test","Hello Adam"], "standard string to array test");
+  assert.deepEqual(stringToArray("Helloworld\nThis is a test"), ["Helloworld","This is a test"], "standard string to array test");
+  assert.deepEqual(stringToArray("Helloworld\n\nThis is a test"), ["Helloworld","This is a test"],"assert blank lines are discarded");
 });
-
-function compareArrays(a, b) {
-    var res = true;
-    if (a.length != b.length){ 
-      res = false;
-    } else {
-      for(var i=0; (i<a.length) && res; i++) {
-          if (a[i] !== b[i]) {
-            res = false;
-          }
-      }
-    }
-    return res;
-};
