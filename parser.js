@@ -88,9 +88,7 @@ function padString(stringToPad, totalLength="16", charToPad="0"){
 }
 
 function stringToArray(splitString) {
-    return splitString.split("\n");
+    return splitString.split("\n").filter(function(v) {
+         return !/^\s*(\/\/.*)?$/.test(v);
+    });
 }
-
-arr.filter(function(e){ 
-  return e === 0 || e 
-});
