@@ -88,7 +88,19 @@ function padString(stringToPad, totalLength="16", charToPad="0"){
 }
 
 function stringToArray(splitString) {
-    return splitString.split("\n").filter(function(v) {
-         return !/^\s*(\/\/.*)?$/.test(v);
-    });
+    var arrOfStrings = splitString.split('\n'); //split the array into strings based on new lines
+    var cleanArray = []; //create a new array to hold the good strings
+    for(i=0;i<arrOfStrings.length;i++){ //Look at every string in the arr of strings
+      var currentString = arrOfStrings[i];//the current string we're looking at is currentString
+      var stringWithoutWhiteSpace = currentString.trim();//remove leading and trailing spaces from it
+      if(stringWithoutWhiteSpace != ""){//if the string without extra spaces isn't blank
+        cleanArray.push(stringWithoutWhiteSpace);  //push that string to the end of our clean array
+      }
+    } //after we finished looking at all the strings in arrOfStrings
+    return cleanArray; //return the array of clean strings
+} 
+
+function removeCommentsFromArray(arrOfStrings){
+    
 }
+
