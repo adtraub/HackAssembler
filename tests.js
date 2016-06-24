@@ -46,9 +46,14 @@ QUnit.test("Test String Padding", function(assert){
 
 //String to Array test cases
 QUnit.test("Test String to Array", function(assert){
-  //assert.ok(stringToArray("Helloworld\nThis is a test") ==["Helloworld","This is a test"]);
-  //assert.ok(stringToArray("This is a test\nHello Adam") ==["This is a test","Hello Adam"]);
   assert.deepEqual(stringToArray("This is a test\nHello Adam"), ["This is a test","Hello Adam"], "standard string to array test");
   assert.deepEqual(stringToArray("Helloworld\nThis is a test"), ["Helloworld","This is a test"], "standard string to array test");
   assert.deepEqual(stringToArray("Helloworld\n\nThis is a test"), ["Helloworld","This is a test"],"assert blank lines are discarded");
+});
+
+//remove comments from array
+QUnit.test("Test String to Array", function(assert){
+  assert.deepEqual(removeCommentsFromArray(["//this line should be removed"]), [], "A string that is just a comment should be removed");
+  assert.deepEqual(removeCommentsFromArray(["ThisShouldStay//this should be removed"]), ["ThisShouldStay"], "A string that is just a comment should be removed");
+  assert.deepEqual(removeCommentsFromArray(["Stay","//go","stay//go","stay stay stay //go go go"]), ["stay","stay","stay stay stay"], "A bigger test, notice the trailing space is removed on the last string");
 });
