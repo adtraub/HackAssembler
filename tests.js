@@ -55,5 +55,5 @@ QUnit.test("Test String to Array", function(assert){
 QUnit.test("Test String to Array", function(assert){
   assert.deepEqual(removeCommentsFromArray(["//this line should be removed"]), [], "A string that is just a comment should be removed");
   assert.deepEqual(removeCommentsFromArray(["ThisShouldStay//this should be removed"]), ["ThisShouldStay"], "A string that is just a comment should be removed");
-  assert.deepEqual(removeCommentsFromArray(["Stay","//go","stay//go","stay stay stay //go go go"]), ["stay","stay","stay stay stay"], "A bigger test, notice the trailing space is removed on the last string");
+  assert.deepEqual(removeCommentsFromArray(["Stay","//go","stay//go","stay stay stay //go go go"]), ["Stay","stay","stay stay stay"], "A bigger test, notice the trailing space is removed on the last string");
 });
