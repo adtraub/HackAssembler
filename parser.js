@@ -90,7 +90,7 @@ function padString(stringToPad, totalLength="16", charToPad="0"){
 function stringToArray(splitString) {
     var arrOfStrings = splitString.split('\n'); //split the array into strings based on new lines
     var cleanArray = []; //create a new array to hold the good strings
-    for(i=0;i<arrOfStrings.length;i++){ //Look at every string in the arr of strings
+    for(var i=0; i<arrOfStrings.length; i++){ //Look at every string in the arr of strings
       var currentString = arrOfStrings[i];//the current string we're looking at is currentString
       var stringWithoutWhiteSpace = currentString.trim();//remove leading and trailing spaces from it
       if(stringWithoutWhiteSpace != ""){//if the string without extra spaces isn't blank
@@ -98,9 +98,22 @@ function stringToArray(splitString) {
       }
     } //after we finished looking at all the strings in arrOfStrings
     return cleanArray; //return the array of clean strings
-} 
+}
 
 function removeCommentsFromArray(arrOfStrings){
-    
+  var cleanArray = []; //create a new array to hold the good strings
+  for (var i=0; i<arrOfStrings.length; i++){ //Look at every string in the arr of strings
+    var currentString = arrOfStrings[i]; //the current string we're looking at is currentString
+    var commentLocation = currentString.indexOf("//"); //finding the location the comment starts in currentString
+
+    if (commentLocation != -1){ //if there is a comment in the string
+      var currentString = currentString.slice(0,commentLocation).trim(); //remove the comment
+    }
+
+    if(currentString.length > 0){ //if there is any content in currentString
+      cleanArray.push(currentString); //add it to the cleanArray
+    }
+  }
+  return cleanArray; //returns the array of comment-free strings
 }
 
